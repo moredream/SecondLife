@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Secondlife::Application.config.secret_key_base = '255b4f578bdfe442fccd8d605937a1bf989a36aa02aef6f4995d98b9d17ec307ffce210a4632189ac93533c9f08a3fff884bd29df9805a0ab6e393b5245224ad'
+Secondlife::Application.config.secret_key_base = '9c4a3c546293ddeb86065925e30fb17cfa151059b8d8ef32a576f70983036eb5950d7f2ad1a931b165f695ca30fd8ef5e65e2bed608e554ffff86500c99c57c3'
