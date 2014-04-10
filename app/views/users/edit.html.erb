@@ -1,0 +1,36 @@
+
+
+<h4>My Profile</h4>
+<div class="row">
+  <div class="thumbnail docs-container ">
+    <%= link_to "My Profile", current_user, :class =>"btn btn-link"%>
+    <%= link_to  'Avata' , '#' , :id => 'my-avata' ,:class =>"btn btn-link" %>
+    <%= link_to  'Info.' , '#' , :id => 'my-info' ,:class =>"btn btn-link" %>
+    <%= link_to  'Passowrd' , '#' , :id => 'my-password' ,:class =>"btn btn-link" %>
+    <%= link_to  'Account' , '#' , :id => 'my-account' ,:class =>"btn btn-link" %>
+  </div>
+</div>
+
+<div class="row">
+  <div id="profile" class="thumbnail docs-container ">
+      <%= render 'avata' %>
+  </div>
+</div>
+<div class="row">
+  <div id="info" class="thumbnail docs-container ">
+      <%= render 'form' %>
+  </div>
+</div>
+<div class="row">
+  <div id="password" class="thumbnail docs-container ">
+     <%= render partial:'password' %>
+  </div>
+</div>
+<div class="row">
+  <div id="account" class="thumbnail docs-container ">
+    <h4>Delete Account</h4>
+
+    <p>We’d hate to see you leave. You’re always welcome back. Deleted accounts cannot be recovered.</p>
+    <p><%= link_to "Delete my account", registration_path('user'), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+  </div>
+</div>

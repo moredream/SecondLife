@@ -1,0 +1,22 @@
+
+<%= form_for  @user , :html => { :id=> "avata_editor", :multipart=>true, :class=>'form-horizontal'} do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+    <fieldset>
+    <legend>Avata</legend>
+
+    <div class="form-group">
+      <%= f.label 'Profile Image', :class => 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+      <%= f.file_field :image, :class => '', :placeholder=>"jpg, gif, png only"%>
+      <%= f.hidden_field :image_cache %>
+      </div>
+    </div>
+    </fieldset>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <%= f.submit 'Change Image', :class=> "btn btn-default" %>
+        <%= link_to 'Cancel', @user, :class => "btn btn-default" %>
+      </div>
+    </div>
+<% end %>

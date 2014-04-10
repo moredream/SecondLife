@@ -1,0 +1,9 @@
+
+<h3 id="" class="page-header">Mentors</h3>
+<h3></h3>
+<div id="lab" class="row">
+<% users.each do |user| %>
+     <%= render partial: "user_item", locals: {item: user, title: user.name } %>
+<% end %>
+</div>
+

@@ -41,7 +41,7 @@ class PhotosController < ApplicationController
 
 private
   def load_attachable
-    klass = [Article, Program, Event].detect { |c| params["#{c.name.underscore}_id"]}
+    klass = [Article, User].detect { |c| params["#{c.name.underscore}_id"]}
     @attachable = klass.find(params["#{klass.name.underscore}_id"])
   end
 

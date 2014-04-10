@@ -44,6 +44,7 @@ gem 'figaro'
 #Attachments
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'remotipart', '~> 1.2'
 
 gem 'bootstrap-sass'
 gem 'dalli'

@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Group.delete_all
+Group.create( name: 'Jobs Suggestion', level: 'default')
+Group.create( name: 'Academic Career', level: 'success')
+Group.create( name: 'Ask to mentors', level: 'primary')
+Group.create( name: 'Questions' ,level:  'info')
+Group.create( name: 'Talk' ,level: 'warning')
+Group.create( name: 'Event', level: 'danger')
