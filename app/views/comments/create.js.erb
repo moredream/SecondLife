@@ -1,0 +1,4 @@
+$('#add_comment').html('').hide();
+$('#new_comment').show();
+$('#comments').prepend("<%= j render 'comment_item', {comment: @comment, commentable: @commentable}  %>");
+

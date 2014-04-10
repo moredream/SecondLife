@@ -1,0 +1,7 @@
+$('#articles').append('<%= j render partial: "article", locals: { items: articles } %>');
+
+<% if articles.next_page %>
+$('.pagination').replaceWith('<%= j paginate articles %>');
+<% else %>
+$('.pagination').remove();
+<% end %>

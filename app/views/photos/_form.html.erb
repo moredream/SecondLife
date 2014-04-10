@@ -1,0 +1,28 @@
+<%= form_for ([@attachable, @photo])  , :html => { :multipart => true ,:class => 'form-horizontal' } do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+    <div class="form-group">
+      <%= f.label :name, :class => 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+        <%= f.text_field :name, :class => 'form-control', :placeholder=>"Image Title" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :image, :class => 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+      <%= f.file_field :image, :class => '', :placeholder=>"jpg, gif, png only"%>
+      <%= f.hidden_field :image_cache %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :remote_image_url,  "or image URL", :class => 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+        <%= f.text_field :remote_image_url, :class => 'form-control', :placeholder=>"Please include 'http:// or https://'" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <%= f.submit nil, :class=> "btn btn-default" %>
+        <%= link_to 'Cancel', @attachable, :class => "btn btn-default" %>
+      </div>
+    </div>
+<% end %>

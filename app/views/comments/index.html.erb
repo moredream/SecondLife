@@ -1,0 +1,18 @@
+<h3></h3>
+<p><%= link_to "Back to #{@commentable.title}",  @commentable %> | <%= link_to "New Comment", [:new, @commentable, :comment],id: "new_comment", remote: true %></p>
+<div id="add_comment" class="row">
+
+</div>
+
+<h3></h3>
+<div class="row">
+  <div id="comments" class="thumbnail docs-container ">
+     <%= render 'comments' %>
+  </div>
+</div>
+
+<div id="append_and_paginate">
+  <%= paginate @comments %>
+</div>
+
+

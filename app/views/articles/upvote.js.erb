@@ -1,0 +1,4 @@
+$("#vote").html("<%=j pluralize(@article.cached_votes_up, 'Like') %>")
+
+$("#btn_like").hide();
+$("#btn_dislike").show();

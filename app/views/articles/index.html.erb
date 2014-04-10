@@ -1,0 +1,24 @@
+
+<h4 class="page-header">Dash Board
+<%= link_to  'Search or Add New' , '#' , :id => 'article-search' ,:class =>"btn btn-link" %>
+<%= link_to  'Close' , '#' , :id => 'article-search-off' ,:class =>"btn btn-link" %> </h4>
+
+<%= render 'tag_cloud' %>
+<div id="tag_panel">
+<div class="row">
+  <div class="col-xs-12 col-sm-4 col-md-4">
+    <%= link_to 'New article', new_article_path ,:class => 'btn btn-default' %>
+  </div>
+  <div class="col-xs-12 col-sm-8 col-md-8 text-right ">
+      <%= render 'search' %>
+  </div>
+</div>
+<h3></h3>
+</div>
+<% cache "Article" , expires_in: 5.minutes do %>
+<div id="articles" class="row">
+<%= render partial: "article", locals: { articles:  articles   } %>
+</div>
+
+<%= paginate articles  %>
+<% end %>

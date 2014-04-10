@@ -1,0 +1,8 @@
+
+<div class="media-list">
+<% @comments.each do |comment| %>
+  <%= render 'comment_item', {comment: comment, commentable: @commentable} %>
+<% end %>
+</div>
+
+

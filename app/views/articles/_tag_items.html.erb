@@ -1,0 +1,7 @@
+<ul>
+<% tags.each do |tag| %>
+<%=  content_tag :li, class: tag_class(tag.level) do
+    tag.name
+  end %>
+<% end%>
+</ul>

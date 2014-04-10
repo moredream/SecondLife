@@ -1,0 +1,10 @@
+
+<div class="row tag_cloud">
+  <ul class="">
+  <%= link_to 'All', articles_path ,class: "label label-info tags" %>
+  <%  groups.each do |group| %>
+  <%= link_to group.name, group_path(group.name), class: tag_class(group.level) %>
+  <% end %>
+  </ul>
+</div>
+

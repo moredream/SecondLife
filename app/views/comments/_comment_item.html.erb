@@ -1,0 +1,16 @@
+
+<div class="media" id='<%="comments_#{comment.id}"%>'>
+  <p class="pull-left" >
+   <%= image_tag comment.user.image.url(:thumb), :class=>'media-object img-rounded' if comment.user.image.present? %>
+  </p>
+  <h4 class="writer">
+    <p><%= comment.to_writer %></p>
+  </h4>
+  <div class="media-body">
+  <%= comment.content %>
+  <%= link_to "Delete", [commentable, comment], method: :delete, data: { confirm: "You sure?" } ,remote: true,  title: comment.content if current_user?(comment.user)%>
+  </div>
+</div>
+
+
+

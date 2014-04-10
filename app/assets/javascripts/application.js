@@ -12,5 +12,20 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.remotipart
+//= require jquery.Jcrop
+//= require jquery.validate
+//= require select2
 //= require turbolinks
 //= require_tree .
+//= require bootstrap
+//= require jquery.ui.widget
+//= require tmpl.min
+//= require load-image.min
+//= require canvas-to-blob.min
+//= require jquery.iframe-transport
+//= require jquery.fileupload
+//= require jquery.fileupload-process
+//= require jquery.fileupload-image
+//= require jquery.fileupload-validate
+//= require jquery.fileupload-ui

@@ -1,0 +1,17 @@
+
+
+<div class="row">
+  <div class="col-xs-12  col-sm-12 col-md-12">
+      <p><h3><%= @photo.name %></h3></p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12  col-sm-12 col-md-12">
+  <%= image_tag @photo.image_url if @photo.image? %>
+  </div>
+</div>
+
+
+
+
+
