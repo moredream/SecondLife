@@ -32,6 +32,15 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# User & Authentication
+gem 'devise'
+gem 'omniauth-facebook'
+gem 'figaro'
+
+#Attachments
+gem 'carrierwave'
+gem 'mini_magick'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
