@@ -29,4 +29,5 @@ Secondlife::Application.routes.draw do
     collection { get :search, to: 'articles#search' }
   end
   
+    get 'trends/:group', to: 'articles#index', as: :group
 end
