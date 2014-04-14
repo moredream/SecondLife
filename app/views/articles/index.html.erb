@@ -15,10 +15,10 @@
 </div>
 <h3></h3>
 </div>
+
 <% cache "Article" , expires_in: 5.minutes do %>
 <div id="articles" class="row">
 <%= render partial: "article", locals: { articles:  articles   } %>
 </div>
-
 <%= paginate articles  %>
 <% end %>
