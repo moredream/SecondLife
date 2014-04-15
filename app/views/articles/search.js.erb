@@ -1,7 +1,7 @@
-$('#articles').append('<%= j render partial: "article", locals: { items: articles } %>');
+$('#articles').append('<%= j render partial: "article", locals: { items: searched_articles } %>');
 
-<% if articles.next_page %>
-$('.pagination').replaceWith('<%= j paginate articles %>');
+<% if searched_articles.next_page %>
+$('.pagination').replaceWith('<%= j paginate searched_articles %>');
 <% else %>
 $('.pagination').remove();
 <% end %>

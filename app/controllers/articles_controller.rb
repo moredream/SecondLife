@@ -9,6 +9,7 @@ class ArticlesController < ApplicationController
 
   def search
 
+
   end
 
   def new
@@ -86,18 +87,22 @@ private
   end
 
   def groups
-    #@groups ||= Group.order(:name)
     @groups ||= Group.cached_groups
   end
 
   helper_method :groups
 
+  def searched_articles
+    if params[:keywords] || params[:group_id]
+      @articles ||= Article.search_tags(params[:keywords], params[:group_id]).page(params[:page]).per(10)
+    end
+  end
+
+  helper_method :searched_articles
 
   def articles
     if params[:group]
       @articles = Article.group_with(params[:group]).page(params[:page]).per(10)
-    elsif params[:keywords] || params[:group_id]
-      @articles ||= Article.search_tags(params[:keywords], params[:group_id]).page(params[:page]).per(10)
     else
       @articles ||= Article.trends('100').page(params[:page]).per(10)
     end

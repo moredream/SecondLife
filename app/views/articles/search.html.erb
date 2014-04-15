@@ -1,18 +1,16 @@
 
-<h3 id="" class="page-header">Dash Board</h3>
-<%= render 'tag_cloud' %>
+<h4 class="page-header">Search</h4>
+
 <div class="row">
-  <div class="col-xs-12 col-sm-4 col-md-4">
-    <%= link_to 'New article', new_article_path ,:class => 'btn btn-default' %>
-  </div>
-  <div class="col-xs-12 col-sm-8 col-md-8 text-right ">
-      <%= render 'search' %>
-  </div>
+ <div class="col-xs-12 col-sm-12 col-md-12">
+ <%= render 'search' %>
+ </div>
 </div>
+
 <h3></h3>
 
-<div  id="articles" class="row">
- <%= render partial: "article", locals: { articles:  articles  } %>
+<div id="articles" class="row">
+ <%= render partial: "article", locals: { articles:  searched_articles  }  if searched_articles %>
 </div>
 
 <%= paginate articles %>

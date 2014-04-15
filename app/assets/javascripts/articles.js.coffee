@@ -11,24 +11,10 @@ $(document).ready(article_editor_ready)
 $(document).on('page:load', article_editor_ready)
 
 $(document).on 'page:change', ->
-  $('#tag_panel').hide()
-  $('#article-search-off').hide()
-
   $('#article_group').select2
     placeholder: "Choose Groups."
     allowClear: true
 
-  $('#article-search').click (event) =>
-    event.preventDefault()
-    $('#tag_panel').show()
-    $('#article-search').hide()
-    $('#article-search-off').show()
-
-  $('#article-search-off').click (event) =>
-    event.preventDefault()
-    $('#tag_panel').hide()
-    $('#article-search').show()
-    $('#article-search-off').hide()
 
 onEndless = ->
   if $('.pagination').length and $('#articles').length

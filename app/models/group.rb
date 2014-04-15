@@ -4,7 +4,7 @@ class Group < ActiveRecord::Base
 after_commit :flush_cache
 
 def flush_cache
-	Rails.cache.delete([self.class.name, id])
+	Rails.cache.delete(["groups", id])
 end
 
 def self.cached_groups
