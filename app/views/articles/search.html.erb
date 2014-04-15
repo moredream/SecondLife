@@ -1,8 +1,6 @@
-<% content_for :slidebar do %>
-  <%= render 'tag_cloud' %>
-<% end %>
-<h3 id="" class="page-header">Dash Board</h3>
 
+<h3 id="" class="page-header">Dash Board</h3>
+<%= render 'tag_cloud' %>
 <div class="row">
   <div class="col-xs-12 col-sm-4 col-md-4">
     <%= link_to 'New article', new_article_path ,:class => 'btn btn-default' %>

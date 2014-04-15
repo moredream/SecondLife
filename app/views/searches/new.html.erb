@@ -1,4 +1,8 @@
-<%= form_tag search_articles_path, :method => :get  , :class=>'form-inline' do  %>
+
+
+<h4 class="page-header">Search </h4>
+
+<%= form_tag @search, :method => :get  , :class=>'form-inline' do  %>
   <div class="form-group">
     <%= text_field_tag :keywords, params[:keywords], :class => "form-control", :placeholder=>"Keywords"  %>
   </div>

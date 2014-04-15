@@ -2,7 +2,7 @@
  <div class="col-xs-12 col-sm-12 col-md-12">
       <div class="thumbnail docs-container ">
           <div class="media">
-            <h4 class="media-heading"><%= link_to article.title.titleize, article , :class=>'post-title' %></h4>
+            <h4 class="media-heading"><%= link_to article.title.titleize, article_path(article,:group=> params[:group],:keywords => params[:keywords], :group_id => params[:group_id]) , :class=>'post-title' %></h4>
             <div class="media-body">
                 <% if article.image.present? %>
                   <div class="focal-point imagebox right-1 up-1">
