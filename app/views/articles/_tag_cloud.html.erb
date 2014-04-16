@@ -1,12 +1,11 @@
 <div class="row tag_cloud text-center">
-	<%= link_to image_tag('tag-32.png'), articles_path ,class: "" %>
-	<%= link_to 'All', articles_path ,class: "label label-info tags" %>	
+	<%= link_to image_tag('tag.png'), articles_path ,class: "" ,id: 'tagkey' %>
+	<%= link_to 'All', articles_path ,class: "label label-info sg-shortcuts" %>	
 	<%  groups.each do |group| %>
 		<%= link_to group.name, group_path(group.name), class: tag_class(group.level) %>
 	<% end %>
-
-<%= link_to  image_tag('find-32.png') , search_articles_path , class: "" %>
-<%= link_to  image_tag('add-32.png') , new_article_path , class: "" %>
+<%= link_to  image_tag('find.png') , search_articles_path , class: "" %>
+<%= link_to  image_tag('add.png') , new_article_path , class: "" %>
 </div>
 
 

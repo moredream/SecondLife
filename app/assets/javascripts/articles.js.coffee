@@ -11,10 +11,16 @@ $(document).ready(article_editor_ready)
 $(document).on('page:load', article_editor_ready)
 
 $(document).on 'page:change', ->
+  
   $('#article_group').select2
     placeholder: "Choose Groups."
     allowClear: true
 
+  $('.sg-shortcuts').hide()
+
+  $('#tagkey').click (event) =>
+    $('.sg-shortcuts').toggle()
+    event.preventDefault()
 
 onEndless = ->
   if $('.pagination').length and $('#articles').length
