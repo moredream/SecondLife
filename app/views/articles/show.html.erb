@@ -1,10 +1,13 @@
 <% content_for :slidebar do %>
 <main class="bs-docs-masthead bgbox" role="main" style="background-image: url(<%=  @article.image.present? ?  @article.image.url(:mobile) : asset_url('background.jpg') %>) ">
 </main>
-<div class="article-container  highlight">
-  <p><h2 class="title"><%= @article.title.titleize %></h2></p>    
-  <p class="lead"><h4 class="writer"> <%= @article.to_writer %></h4></p>
-  <p class="lead"><%=render 'tag_items', {tags: @article.groups } %></p>
+
+<div class="article-container">
+  <div class='bs-docs-masthead'>
+    <p><h2 class="title"><%= @article.title.titleize %></h2></p>    
+    <p class="lead"><h4 class="writer"> <%= @article.to_writer %></h4></p>
+    <p class="lead"><%=render 'tag_items', {tags: @article.groups } %></p>
+  </div>
 </div>
 <% end %>
 

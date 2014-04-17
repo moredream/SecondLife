@@ -1,19 +1,18 @@
 <% articles.each do |article| %>
-<div class="docs-container ">
+<div class="welcome-section">
     <div class="media">
       <h4 class="media-heading"><%= link_to article.title.titleize, article_path(article,:group=> params[:group],:keywords => params[:keywords], :group_id => params[:group_id]) , :class=>'post-title' %></h4>
       <div class="media-body">
           <% if article.image.present? %>
             <div class="focal-point imagebox right-1 up-1">
-              <div> <%= link_to image_tag(article.image.url(:mobile), :class=> 'media-object') , article %></div>
+              <div> <%= link_to image_tag(article.image.url(:list), :class=> 'media-object') , article %></div>
             </div>
           <% end %>
       </div>
-
     </div>
     <div class="media">
       <p class="pull-left" >
-       <%= image_tag( article.user.image.url(:thumb), :class=>'media-object img-circle' ,:size=>'32x32') %>
+       <%= image_tag( article.user.image.url(:thumb), :class=>'media-object img-rounded' ) %>
       </p>
       <h4 class="writer">
         <p><%= article.to_writer %> </p>
@@ -22,6 +21,7 @@
       </h4>
     </div>
 </div>
+<hr size="10" noshade>
 <% end %>
 
 
