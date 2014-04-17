@@ -1,27 +1,28 @@
 <% articles.each do |article| %>
-  <div class="welcome-section">
-      <div class="media">
-        <h4 class="media-heading"><%= link_to article.title.titleize, article_path(article,:group=> params[:group],:keywords => params[:keywords], :group_id => params[:group_id]) , :class=>'post-title' %></h4>
-        <div class="media-body">
-            <% if article.image.present? %>
-              <div class="focal-point right-1 up-1 ">
-                <div> <%= link_to image_tag(article.image.url(:list), :class=> 'media-object') , article %></div>
-              </div>
-            <% end %>
-        </div>
-      </div>
-      <div class="media">
-        <p class="pull-left" >
-         <%= image_tag( article.user.image.url(:thumb), :class=>'media-object img-rounded' ) %>
-        </p>
-        <h4 class="writer">
-          <p><%= article.to_writer %> </p>
-          <p><%= pluralize(article.comments_count, "Comment") %>
-          <%= pluralize(article.cached_votes_up, "Like") %></p>
-        </h4>
-      </div>
+  <div class="media">
+    <h4 class="media-heading"><%= link_to article.title.titleize, article_path(article,:group=> params[:group],:keywords => params[:keywords], :group_id => params[:group_id]) , :class=>'post-title' %></h4>
+    <div class="media-body">
+
+    </div>
+  </div>   
+  <% if article.image.present? %>
+  <div class="media"> 
+  <div class="focal-point right-1 up-1 ">
+    <div> <%= link_to image_tag(article.image.url(:list), :class=> 'media-object') , article %></div>
   </div>
-  <div class="line1"></div>
+  </div>
+  <% end %>      
+  <div class="media">
+    <p class="pull-left" >
+     <%= image_tag( article.user.image.url(:thumb), :class=>'media-object img-rounded' ) %>
+    </p>
+    <h4 class="writer">
+      <p><%= article.to_writer %> </p>
+      <p><%= pluralize(article.comments_count, "Comment") %>
+      <%= pluralize(article.cached_votes_up, "Like") %></p>
+    </h4>
+  </div>  
+  <div class="bwline"></div>
   <hr size="10" noshade>
 <% end %>
 
