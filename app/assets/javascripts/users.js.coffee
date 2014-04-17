@@ -2,7 +2,7 @@ user_editor_ready = ->
   $('#user_editor').validate
     debug: false,
     rules:
-      'user[username]': required: true
+      'user[name]': required: true
 
 $(document).ready(user_editor_ready)
 $(document).on('page:load', user_editor_ready)

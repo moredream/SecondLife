@@ -1,53 +1,12 @@
-<div class="jumbotron">
-  <div class="container">
-Intro !!!!
-  </div>
-</div>
 
-<div class="row">
-  <div class="col-sm-6 col-md-3">
-    <div class="thumbnail">
-      <%=image_tag 'sample.jpg' %>
-      <div class="caption">
-        <h3>Overseas Chances</h3>
-        <p>...</p>
-        <p><a href="#" class="btn btn-default" role="button">Button</a>
-          <a href="#" class="btn btn-default" role="button">Button</a></p>
+  <% content_for :slidebar do %>
+    <%= render partial: "shared/carousel" %>
+    <div class="jumbotron">
+      <div class="container">
+      Intro !!!!
+      <%= link_to 'Welcome Life 2.0', root_path %>
       </div>
     </div>
-  </div>
-  <div class="col-sm-6 col-md-3">
-    <div class="thumbnail">
-      <%=image_tag 'sample.jpg' %>
-      <div class="caption">
-        <h3>Labs Searching</h3>
-        <p>...</p>
-        <p><a href="#" class="btn btn-default" role="button">Button</a>
-          <a href="#" class="btn btn-default" role="button">Button</a></p>
-      </div>
-    </div>
-  </div>
-    <div class="col-sm-6 col-md-3">
-    <div class="thumbnail">
-      <%=image_tag 'sample.jpg' %>
-      <div class="caption">
-        <h3>Mentors Searching</h3>
-        <p>...</p>
-        <p><a href="#" class="btn btn-default" role="button">Button</a>
-          <a href="#" class="btn btn-default" role="button">Button</a></p>
-      </div>
-    </div>
-  </div>
-    <div class="col-sm-6 col-md-3">
-    <div class="thumbnail">
-      <%=image_tag 'sample.jpg' %>
-      <div class="caption">
-        <h3>Tech Searching</h3>
-        <p>...</p>
-        <p><a href="#" class="btn btn-default" role="button">Button</a>
-          <a href="#" class="btn btn-default" role="button">Button</a></p>
-      </div>
-    </div>
-  </div>
-</div>
+
+  <% end %>
 

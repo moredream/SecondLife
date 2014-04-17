@@ -39,7 +39,7 @@ private
   end
 
   def user_params
-    params.require(:user).permit(:username,:image,:remote_image_url,:mobile, :crop_x,:crop_y,:crop_w,:crop_h,
+    params.require(:user).permit(:name,:image,:remote_image_url,:mobile, :crop_x,:crop_y,:crop_w,:crop_h,
       profile_attributes: [:bio,:lab, :url,:twitter,:linkedin,:google,:mobile])
   end
 
