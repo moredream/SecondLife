@@ -1,22 +1,28 @@
 
-  <% content_for :slidebar do %>
-    <%= render partial: "shared/carousel" %>
-  <% end %>
+<% provide(:title, 'Main') %>
 
+<% content_for :slidebar do %>
+  <%= render partial: "shared/carousel" %>
+<% end %>
+
+<div class="bs-docs-section">
+</div>
 
 <% if user_signed_in? %>
 
-  <div id="articles" class="row welcome-container">
+  <div id="articles" class="row">
       <%= render partial: "topic", locals: { articles:  @articles   } %>
   </div> 
-  <% else %>
+
+<% else %>
+
   <div class="center hero-unit">
     <h1>Welcome to the Life 2.0</h1>
 
     <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-default" %>  or
     <%= link_to "Sign with Facebook", user_omniauth_authorize_path(:facebook), class: "btn btn-primary" %>
   </div>
-  <% end %>
+<% end %>
 
 
 

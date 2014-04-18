@@ -2,17 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.welcome-container {
-    // background-color: #E4E6E5;
-    margin-bottom: 10px;
-    padding: 15px 15px;
-}
-
 .bwline {
  	background-color: #E4E6E5;
  	width: 100%;
- 	height: 10px;
+ 	height: 3px;
 }
+
 .carousel {
 	height: 400px;
 	background-image: asset_url('background.jpg');
@@ -21,8 +16,8 @@
 }
 
 .thumbnail-list {
-  width: 180px;
-  height: 180px;
+  width: 470px;
+  height: 246px;
   background-color: #B6B6B6;
 }
 
