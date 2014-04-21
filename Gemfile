@@ -73,7 +73,7 @@ end
 
 gem 'rack-mini-profiler', :group => [:test, :development,:staging]
 gem 'bullet', :group => [:test, :development, :staging]
-
+gem "google-instant-hangouts"   
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

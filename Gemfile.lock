@@ -88,6 +88,8 @@ GEM
       bundler (~> 1.0)
       rails (>= 3, < 5)
     formatador (0.2.4)
+    google-instant-hangouts (0.0.3)
+      railties (>= 3.1)
     guard (2.2.5)
       formatador (>= 0.2.4)
       listen (~> 2.1)
@@ -259,6 +261,7 @@ DEPENDENCIES
   devise
   factory_girl_rails
   figaro
+  google-instant-hangouts
   guard-rspec
   jbuilder (~> 1.2)
   jquery-rails
