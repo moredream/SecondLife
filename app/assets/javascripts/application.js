@@ -29,4 +29,3 @@
 //= require jquery.fileupload-image
 //= require jquery.fileupload-validate
 //= require jquery.fileupload-ui
-//= require google-instant-hangouts

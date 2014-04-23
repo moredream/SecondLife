@@ -50,6 +50,14 @@ test:
   pool: 5
   username: moredream
   password:
+  
+staging:
+  adapter: postgresql
+  encoding: unicode
+  database: secondlife_staging
+  pool: 5
+  username: moredream
+  password:
 
 production:
   adapter: postgresql

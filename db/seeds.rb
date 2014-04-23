@@ -13,3 +13,8 @@ Group.create( name: 'Exchange', level: 'primary')
 Group.create( name: 'Questions' ,level:  'default')
 Group.create( name: 'Talk' ,level: 'warning')
 Group.create( name: 'Event', level: 'danger')
+
+
+User.create(:email=>'test1@test.com',:name=>'test1',:password=>'password')
+User.create(:email=>'test2@test.com',:name=>'test2',:password=>'password')
+User.create(:email=>'test3@test.com',:name=>'test3',:password=>'password')

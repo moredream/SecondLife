@@ -8,8 +8,8 @@ class User < ActiveRecord::Base
   
   mount_uploader :image, AvatarUploader
   acts_as_voter
-  # acts_as_follower
-  # acts_as_followable
+  acts_as_follower
+  acts_as_followable
 
   has_one :profile, inverse_of: :user, dependent: :destroy
   has_many :articles, dependent: :destroy  
@@ -23,8 +23,6 @@ class User < ActiveRecord::Base
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
   after_update :crop_avatar
   
-
-
   def to_param
     "#{id}-#{name}".parameterize
   end   
@@ -32,6 +30,11 @@ class User < ActiveRecord::Base
   def crop_avatar
     self.image.recreate_versions! if crop_x.present?
   end
+
+  def self.follower(user)
+    user.following_users.pluck(:id)
+  end
+
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|

@@ -1,3 +1,5 @@
+
+<% cache @article do %>
 <% content_for :slidebar do %>
 <main class="bs-docs-masthead bgbox" role="main" style="background-image: url(<%=  @article.image.present? ?  @article.image.url(:mobile) : asset_url('background.jpg') %>) ">
 </main>
@@ -24,5 +26,5 @@
   </div>
 </div>
 
-
+<% end %>
 

@@ -30,6 +30,18 @@ class Article < ActiveRecord::Base
 		articles
 	end
 
+	def self.from_users_followed_by(user)
+		followed_user_ids = user.following_users.pluck(:id)
+		where("user_id IN (?) OR user_id = ?", followed_user_ids, user)
+	end
+
+	def self.follow_only(user, query)
+		articles = Article.trending
+		articles = articles.where(user_id: user.following_users.pluck(:id))
+		articles = articles.search(query)
+		articles
+	end
+
 	def self.group_with(name)
 		available.includes(:groups).where("groups.name = ?", name).references(:groups)
 	end
