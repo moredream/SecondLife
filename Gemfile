@@ -36,6 +36,8 @@ end
 gem 'rails_12factor', group: :production
 gem 'puma'
 
+gem 'fog'
+
 # User & Authentication
 gem 'devise'
 gem 'omniauth-facebook'
