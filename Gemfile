@@ -49,7 +49,7 @@ gem 'mini_magick'
 gem 'carrierwave_direct'
 gem 'remotipart', '~> 1.2'
 gem 'sidekiq'
-
+gem 'redis'
 gem 'bootstrap-sass'
 gem 'dalli'
 

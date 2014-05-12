@@ -309,6 +309,7 @@ DEPENDENCIES
   rack-mini-profiler
   rails (= 4.1)
   rails_12factor
+  redis
   remotipart (~> 1.2)
   ruby-prof
   sass-rails (~> 4.0.0)
