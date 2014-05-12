@@ -1,5 +1,4 @@
 
-<% cache @article do %>
 <% content_for :slidebar do %>
 
 <% if @article.image.present? %>
@@ -36,5 +35,4 @@
    <div><%= image_tag(@article.image_url, :class=> 'media-object') %></div>
 <% end %>
 </div>
-<% end %>
 
