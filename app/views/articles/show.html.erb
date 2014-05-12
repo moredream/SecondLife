@@ -3,14 +3,11 @@
 <% content_for :slidebar do %>
 
 <% if @article.image.present? %>
-   <main class="bs-docs-masthead bgbox" role="main" style="background-image: url(<%=  @article.image_processed? ?   @article.image_url(:list) : @article.image.url  %>) ">
+<main class="bs-docs-masthead bgbox" role="main" style="background-image: url(<%=  @article.image_processed? ?  @article.image_url(:list) : @article.image.url  %>) ">
 </main>
 <% else %>
   <main class="bs-docs-masthead bgbox" role="main" style="background-image: 'bg.jpg';"></main>
 <% end %>
-
-
-
 <div class="article-container">
   <div class='bs-docs-masthead'>
     <p><h2 class="title"><%= @article.title.titleize %></h2></p>    
