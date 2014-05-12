@@ -1,5 +1,7 @@
 Secondlife::Application.routes.draw do
 
+  get 'backgrounds/new'
+
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks",registrations: "registrations"}
 
   resources :users , only: [:index, :show, :edit,:update]
@@ -20,8 +22,11 @@ Secondlife::Application.routes.draw do
     resources :comments, only: [:index, :new, :create, :show, :destroy]
   end
   
+  resource :backgrounds, :only => :new
+
   resources :articles do
     concerns :commentable
+    concerns :photoable
     member do
       put "like", to: "articles#upvote"
       put "dislike", to: "articles#downvote"

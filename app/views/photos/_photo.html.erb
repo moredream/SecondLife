@@ -1,7 +1,7 @@
   <div class="col-xs-12  col-sm-4 col-md-4" id='<%="photos_#{photo.id}"%>'>
     <div class="thumbnail docs-container">
         <div class="focal-point imagebox right-1 up-1">
-          <div><%= image_tag(photo.image.url(:mobile), :class=> 'media-object') %></div>
+          <div><%= image_tag(photo.image.url(:list), :class=> 'media-object') %></div>
         </div>
         <div class="actions">
             <%= link_to "remove", [@attachable, photo], data: { confirm: 'Are you sure' } , remote: true,   :method => :delete if current_user?(@attachable.user) %>

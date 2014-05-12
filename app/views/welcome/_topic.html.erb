@@ -1,6 +1,6 @@
 <% articles.each do |article| %>
 
-<div class="docs-container col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">
+<div class="docs-container  col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">
   <div class="media">
     <h4 class="media-heading"><%= link_to article.title.titleize, article_path(article,:group=> params[:group],:keywords => params[:keywords], :group_id => params[:group_id]) , :class=>'post-title' %></h4>
     <div class="media-body">

@@ -46,7 +46,9 @@ gem 'figaro'
 #Attachments
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'carrierwave_direct'
 gem 'remotipart', '~> 1.2'
+gem 'sidekiq'
 
 gem 'bootstrap-sass'
 gem 'dalli'

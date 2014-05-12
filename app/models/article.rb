@@ -6,7 +6,7 @@ class Article < ActiveRecord::Base
 	has_many :groups, through: :groupings
 	has_many :groupings
   
-	mount_uploader :image, ImageUploader
+	mount_uploader :image, DirectUploader
 
 	scope :trending,  lambda { |num = nil| includes(:user).order('created_at  desc').limit(num) }
 	scope :hot,  lambda { |num = nil| includes(:user).order('cached_votes_up  desc').limit(num) }
@@ -14,6 +14,28 @@ class Article < ActiveRecord::Base
   	
   	attr_readonly :comments_count
 	acts_as_votable
+  	
+  	after_save :enqueue_image
+
+	# def image_name
+	#   File.basename(image.path || image.filename) if image
+	# end
+
+  def enqueue_image
+    ImageWorker.perform_async(id, key) if key.present?
+  end
+
+  class ImageWorker
+    include Sidekiq::Worker
+    
+    def perform(id, key)
+      article = Article.find(id)
+      article.key = key
+      article.remote_image_url = article.image.direct_fog_url(with_path: true)
+      article.save!
+      article.update_column(:image_processed, true)
+    end
+  end
 
 	def to_writer
 		 "By #{user.name} #{created_at.strftime("%B %d, %Y")}".titleize

@@ -1,8 +1,15 @@
 
 <% cache @article do %>
 <% content_for :slidebar do %>
-<main class="bs-docs-masthead bgbox" role="main" style="background-image: url(<%=  @article.image.present? ?  @article.image.url(:mobile) : asset_url('background.jpg') %>) ">
+
+<% if @article.image.present? %>
+   <main class="bs-docs-masthead bgbox" role="main" style="background-image: url(<%=  @article.image_processed? ?   @article.image_url(:list) : @article.image.url  %>) ">
 </main>
+<% else %>
+  <main class="bs-docs-masthead bgbox" role="main" style="background-image: 'bg.jpg';"></main>
+<% end %>
+
+
 
 <div class="article-container">
   <div class='bs-docs-masthead'>
@@ -25,6 +32,12 @@
   <%= link_to pluralize(@article.comments_count, "Comment"),  article_comments_path(@article) , :class => "btn btn-default"  %>
   </div>
 </div>
-
+<div class="focal-point imagebox right-1 up-1">
+<% if @article.image_processed? %>
+   <div><%= image_tag(@article.image_url(:list), :class=> 'media-object') %></div>
+<% else %>
+   <div><%= image_tag(@article.image_url, :class=> 'media-object') %></div>
+<% end %>
+</div>
 <% end %>
 

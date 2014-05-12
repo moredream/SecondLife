@@ -13,7 +13,12 @@ class ArticlesController < ApplicationController
   end
 
   def new
-    @article = Article.new
+    @article =  Article.new(key: params[:key]) 
+  end
+
+  def background
+    @uploader = Article.new.image
+    @uploader.success_action_redirect = new_article_url
   end
 
   def create
@@ -83,7 +88,7 @@ private
   end
 
   def article_params
-    params.require(:article).permit(:title, :content, :image,:group_ids=>[])
+    params.require(:article).permit(:title, :content, :image,:image_cache, :key, :group_ids=>[])
   end
 
   def groups

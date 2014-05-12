@@ -8,6 +8,6 @@ CarrierWave.configure do |config|
     :endpoint               => 'https://s3-ap-southeast-1.amazonaws.com' # optional, defaults to nil
   }
   config.fog_directory  = ENV["AWS_S3_BUCKET"]                   # required
-  config.fog_public     = false                                   # optional, defaults to true
+  # config.fog_public     = public-read                                   # optional, defaults to true
   config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}  # optional, defaults to {}
 end
