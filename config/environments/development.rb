@@ -28,4 +28,9 @@ Secondlife::Application.configure do
   config.assets.debug = true
   
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+
+  ENV["REDISTOGO_URL"] = 'redis://username:password@my.host:6389'
+
+
 end
